@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSync | City Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar (common on all pages) -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <div class="logo-mark">HS</div>
+            <div class="logo-text">
+                <span class="logo-title">HealthSync</span>
+                <span class="logo-subtitle">City Hospital</span>
+            </div>
+        </div>
+        <nav class="navbar-right">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="patients.html" class="nav-link">Patients</a>
+            <a href="doctors.html" class="nav-link">Doctors</a>
+        </nav>
+    </header>
+
+    <main class="page">
+    <section class="page-header">
+        <h1>Doctor Module</h1>
+        <p>Manage doctor records for City Hospital. Add new doctors and view existing ones.</p>
+    </section>
+
+    <section class="page-grid">
+        <!-- Left: Add Doctor Form -->
+        <div class="card card-form">
+            <h2>Add New Doctor</h2>
+            <form id="doctor-form">
+
+                <div class="form-row">
+                    <label for="doctor-id">Doctor ID</label>
+                    <input type="text" id="doctor-id" name="doctor-id" placeholder="e.g., D201" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="doctor-name">Name</label>
+                    <input type="text" id="doctor-name" name="doctor-name" placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="doctor-age">Age</label>
+                    <input type="number" id="doctor-age" name="doctor-age" placeholder="e.g., 40" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="doctor-specialization">Specialization</label>
+                    <input type="text" id="doctor-specialization" name="doctor-specialization" placeholder="e.g., Cardiologist" required>
+                </div>
+
+                <button type="submit" class="btn primary-btn full-width">Add Doctor</button>
+            </form>
+            <p class="hint-text">Add doctors details along with their unique doctor ID.</p>
+        </div>
+
+        <!-- Right: Table -->
+        <div class="card card-table">
+            <div class="card-header-row">
+                <h2>Doctor Records</h2>
+            </div>
+<div style="text-align:center; margin-bottom:20px;">
+    <a href="#" id="view-stored-doctors-btn" class="btn primary-btn">
+        View Doctors Details
+    </a>
+</div>
+
+            <table class="data-table" id="doctors-table">
+                <thead>
+                    <tr>
+                        <th>Doctor ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Specialization</th>
+                    </tr>
+                </thead>
+                 <tbody id="doctors-table-body">
+        <!-- Rows from C++ will be inserted here -->
+    </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <span>© 2025 HealthSync · City Hospital · Doctor Module</span>
+</footer>
+
+    
+
+    <script src="js/main.js"></script>
+</body>
+</html>

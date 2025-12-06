@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSync | City Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar (common on all pages) -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <div class="logo-mark">HS</div>
+            <div class="logo-text">
+                <span class="logo-title">HealthSync</span>
+                <span class="logo-subtitle">City Hospital</span>
+            </div>
+        </div>
+        <nav class="navbar-right">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="patients.html" class="nav-link">Patients</a>
+            <a href="doctors.html" class="nav-link">Doctors</a>
+        </nav>
+    </header>
+
+    <main class="page">
+    <section class="page-header">
+        <h1>Patient Module</h1>
+        <p>Manage patient records for City Hospital. Add new patients and view existing ones.</p>
+    </section>
+
+    <section class="page-grid">
+        <!-- Left: Add Patient Form -->
+        <div class="card card-form">
+            <h2>Add New Patient</h2>
+           <form id="patient-form">
+    <div class="form-row">
+        <label for="patient-id">Patient ID</label>
+        <input type="text" id="patient-id" name="patient-id" placeholder="e.g., P101" required>
+    </div>
+
+    <div class="form-row">
+        <label for="patient-name">Name</label>
+        <input type="text" id="patient-name" name="patient-name" placeholder="Enter full name" required>
+    </div>
+
+    <div class="form-row">
+        <label for="patient-age">Age</label>
+        <input type="number" id="patient-age" name="patient-age" placeholder="e.g., 32" required>
+    </div>
+
+    <div class="form-row">
+        <label for="patient-disease">Disease</label>
+        <input type="text" id="patient-disease" name="patient-disease" placeholder="e.g., Diabetes" required>
+    </div>
+
+    <div class="form-row">
+        <label for="patient-doctor">Assigned Doctor</label>
+        <input type="text" id="patient-doctor" name="patient-doctor" placeholder="Doctor ID or Name" required>
+    </div>
+
+    <button type="submit" class="btn primary-btn full-width">Add Patient</button>
+</form>
+
+            <p class="hint-text">Note: Associate each patient with unique ID only.</p>
+        </div>
+
+        <!-- Right: Search and Table -->
+        <div class="card card-table">
+            <div class="card-header-row">
+                <h2>Patient Records</h2>
+                <div class="search-box">
+                    <input type="text" id="search-patient-id" placeholder="Search by Patient ID">
+                    <button id="search-patient-btn" class="btn secondary-btn small-btn">Search</button>
+                </div>
+            </div>
+<div style="text-align:center; margin-bottom:20px;">
+  <a href="#" id="view-stored-patients-btn" class="btn primary-btn">
+    View Patients Details
+</a>
+
+</div>
+
+            <table class="data-table" id="patients-table">
+                <thead>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Disease</th>
+                        <th>Assigned Doctor</th>
+                    </tr>
+                </thead>
+                <tbody id="patients-table-body">
+    <!-- This sample row is optional; it will be replaced by real data -->
+</tbody>
+
+            </table>
+            <p class="hint-text">This is the list of all the patients.</p>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <span>© 2025 HealthSync · City Hospital · Patient Module</span>
+</footer>
+
+    
+
+    <script src="js/main.js"></script>
+</body>
+</html>
