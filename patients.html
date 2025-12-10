@@ -34,36 +34,37 @@
         <!-- Left: Add Patient Form -->
         <div class="card card-form">
             <h2>Add New Patient</h2>
-           <form id="patient-form">
-    <div class="form-row">
-        <label for="patient-id">Patient ID</label>
-        <input type="text" id="patient-id" name="patient-id" placeholder="e.g., P101" required>
-    </div>
+           <form id="patient-form" action="http://localhost/cgi-bin/add_patient.exe" method="GET">
 
-    <div class="form-row">
-        <label for="patient-name">Name</label>
-        <input type="text" id="patient-name" name="patient-name" placeholder="Enter full name" required>
-    </div>
 
-    <div class="form-row">
-        <label for="patient-age">Age</label>
-        <input type="number" id="patient-age" name="patient-age" placeholder="e.g., 32" required>
-    </div>
+                <div class="form-row">
+                    <label for="patient-id">Patient ID</label>
+                    <input type="text" id="patient-id" name="patient-id" placeholder="e.g., P101" required>
+                </div>
 
-    <div class="form-row">
-        <label for="patient-disease">Disease</label>
-        <input type="text" id="patient-disease" name="patient-disease" placeholder="e.g., Diabetes" required>
-    </div>
+                <div class="form-row">
+                    <label for="patient-name">Name</label>
+                    <input type="text" id="patient-name" name="patient-name" placeholder="Enter full name" required>
+                </div>
 
-    <div class="form-row">
-        <label for="patient-doctor">Assigned Doctor</label>
-        <input type="text" id="patient-doctor" name="patient-doctor" placeholder="Doctor ID or Name" required>
-    </div>
+                <div class="form-row">
+                    <label for="patient-age">Age</label>
+                    <input type="number" id="patient-age" name="patient-age" placeholder="e.g., 32" required>
+                </div>
 
-    <button type="submit" class="btn primary-btn full-width">Add Patient</button>
-</form>
+                <div class="form-row">
+                    <label for="patient-disease">Disease</label>
+                    <input type="text" id="patient-disease" name="patient-disease" placeholder="e.g., Diabetes" required>
+                </div>
 
-            <p class="hint-text">Note: Associate each patient with unique ID only.</p>
+                <div class="form-row">
+                    <label for="patient-doctor">Assigned Doctor</label>
+                    <input type="text" id="patient-doctor" name="patient-doctor" placeholder="Doctor ID or Name" required>
+                </div>
+
+                <button type="submit" class="btn primary-btn full-width">Add Patient</button>
+            </form>
+            <p class="hint-text">Note: Currently this form only updates the table on this page (front-end demo). Later we can connect it to C++ file storage.</p>
         </div>
 
         <!-- Right: Search and Table -->
@@ -75,12 +76,6 @@
                     <button id="search-patient-btn" class="btn secondary-btn small-btn">Search</button>
                 </div>
             </div>
-<div style="text-align:center; margin-bottom:20px;">
-  <a href="#" id="view-stored-patients-btn" class="btn primary-btn">
-    View Patients Details
-</a>
-
-</div>
 
             <table class="data-table" id="patients-table">
                 <thead>
@@ -92,12 +87,18 @@
                         <th>Assigned Doctor</th>
                     </tr>
                 </thead>
-                <tbody id="patients-table-body">
-    <!-- This sample row is optional; it will be replaced by real data -->
-</tbody>
-
+                <tbody>
+                    <!-- For demo, you can keep 1–2 sample rows -->
+                    <tr>
+                        <td>P100</td>
+                        <td>Rahul Sharma</td>
+                        <td>45</td>
+                        <td>Hypertension</td>
+                        <td>D201 - Dr. Mehta</td>
+                    </tr>
+                </tbody>
             </table>
-            <p class="hint-text">This is the list of all the patients.</p>
+            <p class="hint-text">Search is front-end only for now. Later it can use C++ backend with <code>patient.txt</code>.</p>
         </div>
     </section>
 </main>
